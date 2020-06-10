@@ -20,7 +20,7 @@ cookies :{
 
 }, 
 resave: false, // recreates session if not save 
-saveUninitialize: false ,// legalal compliance , true on production 
+saveUninitialized: false ,// legalal compliance , true on production 
 store: new knexStore({ // saves cookie acceessiability info , waraaps session in knex connect 
 	knex:require('../data/dbConfig.js'), // link to databaase knew config gfile 
 	tablename: "sessions",
@@ -31,7 +31,7 @@ store: new knexStore({ // saves cookie acceessiability info , waraaps session in
 
 server.use(session(sessionConfig))
 
-server.use('/api', users)
+server.use('/', users)
 server.get("/", (req, res) => {
   res.json({ message: "running" });
 });
