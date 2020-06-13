@@ -5,7 +5,7 @@ const brcypt = require('bcryptjs');
 const authRouter = require('../auth/auth-router.js')
 const usersRouter = require("../users/users-router.js");
 
-
+// 
 const helmet = require("helmet");
 const expSession = require('express-session')
 const knexSeshConnect = require('connect-session-knex')
@@ -32,7 +32,7 @@ const sessionConfig = {
 }
 server.use(expSession(sessionConfig))
 server.use(helmet());
-
+// 
 
 
 server.use(express.json());
